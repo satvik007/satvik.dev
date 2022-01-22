@@ -1,8 +1,6 @@
 import siteMetadata from 'data/siteMetadata.json'
 import Icon from '@/components/icons'
 import Image from 'next/image'
-import { RoughNotation } from 'react-rough-notation'
-import Link from 'next/link'
 
 export default function Welcome() {
   return (
@@ -23,48 +21,10 @@ export default function Welcome() {
           </div>
         </div>
         <div className=" prose dark:prose-dark pt-8 pb-8 xl:col-span-2">
-          <h1>Hey, I am Kirill</h1>
-
+          <h1>Hey, I am Satvik</h1>
           <p>
-            I am a{' '}
-            <RoughNotation
-              animationDelay={2000}
-              animationDuration={3000}
-              type="highlight"
-              color="#0ea4e9"
-              strokeWidth={3}
-              show={true}
-            >
-              product
-            </RoughNotation>{' '}
-            and{' '}
-            <RoughNotation
-              animationDelay={4000}
-              animationDuration={2000}
-              type="highlight"
-              color="#0ea4e9"
-              show={true}
-              strokeWidth={3}
-            >
-              growth
-            </RoughNotation>{' '}
-            executive, maker and aspiring polymath based in Singapore.
-          </p>
-          <p>
-            I also experiment with digital products, life design and emerging technology. Feel free
-            to learn more <Link href="/about">about me</Link>, ping me on{' '}
-            <a href="https://twitter.com/sokirill">Twitter</a> or{' '}
-            <RoughNotation
-              animationDelay={6000}
-              animationDuration={2000}
-              type="highlight"
-              color="#0ea4e9"
-              show={true}
-              strokeWidth={3}
-            >
-              sign-up
-            </RoughNotation>{' '}
-            for my occasional essays on life and work.
+            I am senior software engineer at Envestnet Yodlee and I am a full stack developer. I am
+            passionate about building products that solve real world problems.
           </p>
         </div>
       </div>
