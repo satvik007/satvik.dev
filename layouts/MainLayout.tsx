@@ -31,7 +31,6 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         <main className="mb-auto">{children}</main>
         <Footer />
       </div>
-      <Script src="https://cdn.splitbee.io/sb.js" strategy="lazyOnload" />
     </SectionContainer>
   )
 }
