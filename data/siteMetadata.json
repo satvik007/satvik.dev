@@ -1,0 +1,17 @@
+{
+  "title": "Satvik Choudhary - personal blog and website",
+  "author": "Satvik Choudhary",
+  "headerTitle": "Satvik Choudhary",
+  "description": "",
+  "language": "en-us",
+  "siteUrl": "https://www.satvik.dev",
+  "siteRepo": "https://github.com/satvik007/satvik.dev",
+  "image": "/static/img/avatar.jpeg",
+  "socialBanner": "/static/img/twitter-card.png",
+  "email": "satvikchoudhary@gmail.com",
+  "github": "https://github.com/satvik007",
+  "twitter": "https://twitter.com/realsatvik007",
+  "linkedin": "https://www.linkedin.com/in/satvik-choudhary",
+  "locale": "en-US",
+  "canonical": "https://www.satvik.dev"
+}
