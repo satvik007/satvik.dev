@@ -5,6 +5,7 @@ import headerNavLinks from 'data/headerNavLinks'
 import Link from 'components/Link'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import MobileNav from '@/components/MobileNav'
+import Script from 'next/script'
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
@@ -30,6 +31,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         <main className="mb-auto">{children}</main>
         <Footer />
       </div>
+      <Script src="https://cdn.splitbee.io/sb.js" strategy="lazyOnload" />
     </SectionContainer>
   )
 }
