@@ -1,12 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import Link from 'next/link'
-import {ReactNode} from "react";
+import { ReactNode } from 'react'
 
-const CustomLink = ({ href, ...rest }: {
-  href: string;
-  children?:ReactNode;
-  className?:string;
-  onClick?:() => void;
+const CustomLink = ({
+  href,
+  ...rest
+}: {
+  href: string
+  children?: ReactNode
+  className?: string
+  onClick?: () => void
 }) => {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')

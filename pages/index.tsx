@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import MainLayout from "layouts/MainLayout";
+import MainLayout from 'layouts/MainLayout'
 import { getAllFilesFrontMatter } from 'lib/mdx'
 
 export async function getStaticProps() {
@@ -11,11 +10,7 @@ export async function getStaticProps() {
 export default function Home() {
   return (
     <MainLayout>
-
-      <div className="text-6xl">
-        Under construction...
-      </div>
-
+      <div className="text-6xl">Under construction...</div>
     </MainLayout>
   )
 }

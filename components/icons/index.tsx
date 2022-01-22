@@ -16,10 +16,14 @@ const components = {
   twitter: Twitter,
 }
 
-const SocialIcon = ({ kind, href, size = 8 }: {
-  kind: 'mail'|'github'|'facebook'|'youtube'|'linkedin'|'twitter';
-  href: string;
-  size?: number;
+const SocialIcon = ({
+  kind,
+  href,
+  size = 8,
+}: {
+  kind: 'mail' | 'github' | 'facebook' | 'youtube' | 'linkedin' | 'twitter'
+  href: string
+  size?: number
 }) => {
   if (!href) return null
 

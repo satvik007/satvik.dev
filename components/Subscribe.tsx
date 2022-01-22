@@ -1,4 +1,4 @@
-import {useState, useRef, SetStateAction, FormEventHandler} from 'react'
+import { useState, useRef, FormEvent } from 'react'
 import useSWR from 'swr'
 import fetcher from 'lib/fetcher'
 import SuccessMessage from 'components/SuccessMessage'
@@ -7,12 +7,12 @@ import LoadingSpinner from 'components/LoadingSpinner'
 import { RoughNotation } from 'react-rough-notation'
 
 export default function Subscribe() {
-  const [form, setForm] = useState<{ state?: string; message?:string; }>({state: ''})
-  const inputEl = useRef<HTMLInputElement>(null);
+  const [form, setForm] = useState<{ state?: string; message?: string }>({ state: '' })
+  const inputEl = useRef<HTMLInputElement>(null)
   const { data } = useSWR('/api/subscribers', fetcher)
   const subscriberCount = Number(data?.count)
 
-  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+  const subscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setForm({ state: 'loading' })
 

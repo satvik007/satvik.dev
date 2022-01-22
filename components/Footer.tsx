@@ -1,9 +1,7 @@
-// import Link from './Link'
 import siteMetadata from 'data/siteMetadata.json'
 import Icon from 'components/icons'
-import Link from 'next/link';
 
-export default function Footer({className}: {className?: string;}) {
+export default function Footer({ className }: { className?: string }) {
   return (
     <footer className={className}>
       <div className="flex flex-col items-center mt-16">

@@ -1,12 +1,12 @@
-import React from 'react'
+import { ReactNode } from 'react'
 import Footer from 'components/Footer'
-import SectionContainer from "components/SectionContainer";
+import SectionContainer from 'components/SectionContainer'
 import headerNavLinks from 'data/headerNavLinks'
 import Link from 'components/Link'
-import ThemeSwitch from "@/components/ThemeSwitch";
-import MobileNav from "@/components/MobileNav";
+import ThemeSwitch from '@/components/ThemeSwitch'
+import MobileNav from '@/components/MobileNav'
 
-export default function MainLayout ({ children }: {children: React.ReactNode}) {
+export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <SectionContainer>
       <div className="flex flex-col justify-between h-screen min-w-1/2">
@@ -31,6 +31,5 @@ export default function MainLayout ({ children }: {children: React.ReactNode}) {
         <Footer />
       </div>
     </SectionContainer>
-
   )
 }
