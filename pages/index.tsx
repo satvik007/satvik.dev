@@ -1,16 +1,11 @@
 import MainLayout from 'layouts/MainLayout'
-import { getAllFilesFrontMatter } from 'lib/mdx'
-
-export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
-
-  return { props: { posts } }
-}
+import Script from 'next/script'
+import HomeHeader from 'components/HomeHeader'
 
 export default function Home() {
   return (
     <MainLayout>
-      <div className="text-6xl">Under construction...</div>
+      <HomeHeader />
     </MainLayout>
   )
 }
