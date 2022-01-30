@@ -1,4 +1,4 @@
-import 'styles/main.css'
+import '@/styles/main.css'
 import type { AppProps } from 'next/app'
 import splitbee from '@splitbee/web'
 import { useEffect } from 'react'
