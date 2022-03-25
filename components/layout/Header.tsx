@@ -1,4 +1,4 @@
-import Logo from 'components/Logo'
+import Logo from '@/components/Logo'
 import Link from 'next/link'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import { ThemeProvider } from 'next-themes'

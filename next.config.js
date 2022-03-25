@@ -21,7 +21,7 @@ module.exports = {
     })
 
     if (!dev && !isServer) {
-      config.resolve.fallback.fs = false;
+      config.resolve.fallback.fs = false
       // Replace React with Preact only in client production build
       Object.assign(config.resolve.alias, {
         'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
@@ -32,5 +32,5 @@ module.exports = {
     }
 
     return config
-  }
+  },
 }
