@@ -11,6 +11,7 @@ export type UnstyledLinkProps = {
   nextLinkProps?: Omit<LinkProps, 'href'>
 } & React.ComponentPropsWithRef<'a'>
 
+// eslint-disable-next-line react/display-name
 const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
   ({ children, href, openNewTab, className, nextLinkProps, ...rest }, ref) => {
     const isNewTab =

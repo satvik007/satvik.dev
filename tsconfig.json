@@ -22,10 +22,7 @@
       "@/lib/*": ["lib/*"],
       "@/data/*": ["data/*"]
     },
-    "types": [
-      "node",
-      "gtag.js",
-    ]
+    "types": ["node", "gtag.js", "jest"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

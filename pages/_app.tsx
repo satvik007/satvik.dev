@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute='class'>
       <Component {...pageProps} />
     </ThemeProvider>
   )
