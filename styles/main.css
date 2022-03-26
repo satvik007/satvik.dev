@@ -28,6 +28,11 @@ body {
 
 .canvas-container {
   background-image: url('/images/bg-gradient.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .profile-image {

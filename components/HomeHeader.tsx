@@ -26,7 +26,7 @@ export default function HomeHeader() {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
       <div className='min-w-screen canvas-container absolute flex min-h-screen items-center justify-center'>
-        <canvas id='gradient-canvas' className='min-h-screen' />
+        <canvas id='gradient-canvas' className='min-w-screen min-h-screen' />
       </div>
 
       <div className='z-10 m-20'>
