@@ -52,6 +52,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "mdx-bundler": "^8.0.1",
+    "next-sitemap": "^2.5.14",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
     "prettier": "^2.5.1",
