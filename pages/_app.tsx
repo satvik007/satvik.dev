@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      gtag.pageView(url)
+      // gtag.pageView(url)
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute='class'>
       <Component {...pageProps} />
     </ThemeProvider>
   )

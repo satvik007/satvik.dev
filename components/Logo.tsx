@@ -6,8 +6,8 @@ export default function Logo({
   ...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
   return (
-    <Link href="/">
-      <div className="logo-rainbow-box">
+    <Link href='/'>
+      <div className='logo-rainbow-box'>
         <span className={'logo-text ' + className}>S</span>
       </div>
     </Link>
