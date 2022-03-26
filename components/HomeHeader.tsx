@@ -1,13 +1,32 @@
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from '@/components/Link'
+import { useEffect } from 'react'
+import Gradient from 'lib/gradient'
 
 export default function HomeHeader() {
+  useEffect(() => {
+    /*
+     *Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
+     * Use Gradient.pause() and Gradient.play() for controls.
+     *
+     * Here are some default property values you can change anytime:
+     * Amplitude:    Gradient.amp = 0
+     * Colors:       Gradient.sectionColors (if you change colors, use normalizeColor(#hexValue)) before you assign it.
+     *
+     *
+     * Useful functions
+     * Gradient.toggleColor(index)
+     * Gradient.updateFrequency(freq)
+     */
+    const gradient: any = new Gradient()
+    gradient.initGradient('#gradient-canvas')
+  }, [])
+
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
-      <div className='absolute flex min-h-screen items-center justify-center bg-blue-300'>
+      <div className='min-w-screen canvas-container absolute flex min-h-screen items-center justify-center'>
         <canvas id='gradient-canvas' className='min-h-screen' />
-        <Script src='/scripts/gradient.js' strategy='beforeInteractive' />
       </div>
 
       <div className='z-10 m-20'>

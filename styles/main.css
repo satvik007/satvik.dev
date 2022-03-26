@@ -26,6 +26,10 @@ body {
   z-index: 1;
 }
 
+.canvas-container {
+  background-image: url('/images/bg-gradient.png');
+}
+
 .profile-image {
   border-radius: 50%;
   /*border: 20px solid var(--color-background-container);*/

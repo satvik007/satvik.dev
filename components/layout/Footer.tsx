@@ -5,6 +5,10 @@ import Link from 'next/link'
 
 const links = [
   {
+    title: 'Home',
+    path: '/',
+  },
+  {
     title: 'Blog',
     path: '/blog',
   },
