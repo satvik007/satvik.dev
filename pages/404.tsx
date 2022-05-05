@@ -10,7 +10,7 @@ export default function four04() {
     <MainLayout>
       <Seo templateTitle='Not Found' />
 
-      <main className='flex flex-col items-center justify-center'>
+      <main className='flex h-full w-full flex-1 flex-col items-center justify-center'>
         <section className='min-h-full min-w-full bg-white'>
           <div className='layout flex min-h-full flex-col items-center justify-center text-center text-black'>
             <RiAlarmWarningFill
