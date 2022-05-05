@@ -34,6 +34,7 @@ export default function Recommends({ books }: { books: Book[] }) {
         <BookSection books={books} />
         <MovieSection movies={[]} />
         <MusicSection music={[]} />
+        <p className='h-full flex-1 text-center text-3xl '>Work in progress!</p>
       </main>{' '}
       {showTopBtn && (
         <FaAngleUp
@@ -48,9 +49,12 @@ export default function Recommends({ books }: { books: Book[] }) {
 export function BookSection({ books }: { books: Book[] }) {
   return (
     <Section name='Books' initialOpen={true}>
-      <div className='border border-sky-300'>
+      <div className='my-4 flex flex-col justify-center px-3'>
+        <blockquote className='text-center text-lg'>
+          A reader lives a thousand lives before he dies . . . The man who never reads lives only
+          one.
+        </blockquote>
         <BooksGrid books={books} />
-        <p>Nothing here yet!</p>
       </div>
     </Section>
   )
@@ -59,8 +63,10 @@ export function BookSection({ books }: { books: Book[] }) {
 export function MovieSection({ movies }: { movies: any[] }) {
   return (
     <Section name='Movies' initialOpen={false}>
-      <div className='border border-sky-300'>
-        <p>Nothing here yet!</p>
+      <div className='my-4 flex flex-col justify-center px-3'>
+        <blockquote className='text-center text-lg'>
+          Cinema is a matter of what's in the frame and what's out.
+        </blockquote>
       </div>
     </Section>
   )
@@ -69,8 +75,8 @@ export function MovieSection({ movies }: { movies: any[] }) {
 export function MusicSection({ music }: { music: any[] }) {
   return (
     <Section name='Music' initialOpen={false}>
-      <div className='border border-sky-300'>
-        <p>Nothing here yet!</p>
+      <div className='my-4 flex flex-col justify-center px-3'>
+        <blockquote className='text-center text-lg'>Your music rescues me!</blockquote>
       </div>
     </Section>
   )
@@ -90,7 +96,7 @@ export function Section({
   const onClick = (x: boolean) => setIsOpen(x)
 
   return (
-    <section className='min-h-full min-w-full bg-white'>
+    <section className='min-w-full bg-white'>
       <AboveLine name={name} isOpen={isOpen} onClick={onClick} />
       {!!isOpen && children}
     </section>
@@ -99,9 +105,9 @@ export function Section({
 
 export function AboveLine({ name, isOpen, onClick }) {
   return (
-    <div className='border border-sky-300 bg-fuchsia-200'>
+    <div className='border border-sky-400 bg-sky-200'>
       <button
-        className='flex w-full items-center gap-4 px-4 py-1 text-center text-xl font-bold text-gray-600'
+        className='flex w-full items-center gap-4 px-4 py-1 text-center text-xl font-bold'
         onClick={() => onClick(!isOpen)}
       >
         <components.down />
@@ -116,6 +122,6 @@ export async function getStaticProps() {
   return {
     props: {
       books,
-    }, // will be passed to the page component as props
+    },
   }
 }
