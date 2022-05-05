@@ -3,3 +3,7 @@ export default async function Fetcher(request: Request): Promise<{ count?: numbe
 
   return res.json()
 }
+
+export async function fetchBooks() {
+  return []
+}
