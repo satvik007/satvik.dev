@@ -27,8 +27,8 @@ const links2 = [
 
 export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className={clsx(className, 'bg-green-50 py-2')}>
-      <div className='mt-16 flex flex-col items-center'>
+    <footer className={clsx(className, 'bg-gradient-to-r from-white via-cyan-300 to-white py-2')}>
+      <div className='mt-4 flex flex-col items-center'>
         <div className='grid grid-cols-4 items-center'>
           <div className='prose dark:prose-dark col-span-2 mb-5 flex space-x-4'>
             <Icon kind='github' size='40px' href={siteMetadata.github} />
