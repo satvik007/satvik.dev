@@ -18,18 +18,26 @@ export default function Home() {
     <MainLayout>
       <Seo templateTitle='Contact' />
 
-      <main className='flex flex-col items-center justify-center'>
-        <section className='min-h-full min-w-full bg-white'>
-          <div className='container mx-auto px-4 py-16'>
+      <main className='bg-prism flex flex-1 flex-col items-center justify-center'>
+        <section className='flex min-w-full flex-1 flex-col'>
+          <div className='container mx-auto flex flex-1 flex-col px-4 py-16'>
             <div className='flex flex-col items-center justify-center'>
-              <h1 className='text-center text-3xl font-bold'>Contact</h1>
-              <p className='text-center text-gray-600'>
+              <h1 className='text-center text-5xl font-bold'>Contact</h1>
+              <p className='mt-4 text-center text-lg text-gray-600'>
                 If you have any questions, please feel free to contact me.
               </p>
             </div>
 
-            <div className='mt-4 text-center'>
-              <p>My email is satvikchoudhary@gmail.com</p>
+            <div className='mt-16 text-center text-xl'>
+              <p>
+                My email is{' '}
+                <a
+                  className='text-blue-600'
+                  href='mailto:satvikchoudhary@gmail.com?Subject=(from:site)<enter your subject>'
+                >
+                  satvikchoudhary@gmail.com
+                </a>
+              </p>
               <p>
                 You can also reach me via Twitter{' '}
                 <a href={siteMetadata.twitter} className='text-blue-600'>
