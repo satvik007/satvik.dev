@@ -27,7 +27,7 @@ const links2 = [
 
 export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className={clsx(className, 'bg-gradient-to-r from-white via-cyan-300 to-white py-2')}>
+    <footer className={clsx(className, 'bg-prism')}>
       <div className='mt-4 flex flex-col items-center'>
         <div className='grid grid-cols-4 items-center'>
           <div className='prose dark:prose-dark col-span-2 mb-5 flex space-x-4'>

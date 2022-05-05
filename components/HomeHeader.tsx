@@ -31,9 +31,9 @@ export default function HomeHeader() {
 
       <div className='z-10 m-20'>
         <div>
-          <div className='ml-6 mb-4 text-[1.5vw]'>Hi, I’m</div>
-          <h1 className='text-[6vw] font-extrabold capitalize leading-none'>Satvik</h1>
-          <h1 className='text-[6vw] font-extrabold capitalize leading-none'>Choudhary</h1>
+          <div className='ml-6 mb-4 text-[1.35em]'>Hi, I’m</div>
+          <h1 className='text-[5.4em] font-extrabold capitalize leading-none'>Satvik</h1>
+          <h1 className='text-[5.4em] font-extrabold capitalize leading-none'>Choudhary</h1>
         </div>
 
         <div className='mt-12 text-2xl leading-normal'>
