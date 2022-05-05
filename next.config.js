@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
+
 module.exports = {
   reactStrictMode: true,
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { dev, isServer, ...options }) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [
@@ -18,6 +19,20 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
+    })
+
+    config.module.rules.push({
+      test: { and: [/\.mdx$/, /snippets/] },
+      resourceQuery: { not: [/rss/, /preview/] },
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            remarkPlugins: [],
+          },
+        },
+      ],
     })
 
     if (!dev && !isServer) {
