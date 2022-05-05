@@ -19,6 +19,15 @@
     background-attachment: fixed;
     background-size: cover;
   }
+  blockquote::before {
+    content: open-quote;
+  }
+  blockquote::after {
+    content: close-quote;
+  }
+  blockquote {
+    quotes: '“' '”' '‘' '’';
+  }
 }
 
 :root {
