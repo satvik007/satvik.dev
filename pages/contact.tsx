@@ -1,11 +1,11 @@
-import MainLayout from '@/components/layout/MainLayout'
+import MainLayout from 'components/../layouts/MainLayout'
 import Script from 'next/script'
 import HomeHeader from 'components/HomeHeader'
-import Seo from '@/components/Seo'
+import Seo from 'components/Seo'
 import { RiAlarmWarningFill } from 'react-icons/ri'
-import ArrowLink from '@/components/links/ArrowLink'
+import ArrowLink from 'components/links/ArrowLink'
 import { useState } from 'react'
-import siteMetadata from '@/data/siteMetadata.json'
+import siteMetadata from 'data/siteMetadata.json'
 
 export default function Home() {
   const [copySuccess, setCopySuccess] = useState(false)

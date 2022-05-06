@@ -1,4 +1,4 @@
-import { fetchBooks } from '@/lib/fetcher'
+import { fetchBooks } from 'lib/fetcher'
 
 describe('Test suite for fetcher', () => {
   it('run fetchBooks', async () => {

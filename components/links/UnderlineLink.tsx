@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import clsxm from '@/lib/clsxm'
+import clsxm from 'lib/clsxm'
 
-import UnstyledLink, { UnstyledLinkProps } from '@/components/links/UnstyledLink'
+import UnstyledLink, { UnstyledLinkProps } from 'components/links/UnstyledLink'
 
 // eslint-disable-next-line react/display-name
 const UnderlineLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(

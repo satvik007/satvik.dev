@@ -1,8 +1,6 @@
-import MainLayout from '@/components/layout/MainLayout'
-import Script from 'next/script'
-import HomeHeader from 'components/HomeHeader'
-import Seo from '@/components/Seo'
-import ArrowLink from '@/components/links/ArrowLink'
+import MainLayout from 'components/../layouts/MainLayout'
+import Seo from 'components/Seo'
+import ArrowLink from 'components/links/ArrowLink'
 import { RiAlarmWarningFill } from 'react-icons/ri'
 
 export default function four04() {

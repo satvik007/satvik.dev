@@ -1,6 +1,6 @@
 import Script from 'next/script'
 import Image from 'next/image'
-import Link from '@/components/Link'
+import Link from 'components/Link'
 import { useEffect } from 'react'
 import Gradient from 'lib/gradient'
 
