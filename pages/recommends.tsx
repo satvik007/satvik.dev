@@ -1,9 +1,8 @@
-import MainLayout from '@/components/layout/MainLayout'
-import Seo from '@/components/Seo'
-import BooksGrid from '@/components/BooksGrid'
-import { fetchBooks } from '@/lib/fetcher'
+import MainLayout from 'components/../layouts/MainLayout'
+import Seo from 'components/Seo'
+import BooksGrid from 'components/BooksGrid'
 import { useEffect, useState } from 'react'
-import { components } from '@/components/icons'
+import { components } from 'components/icons'
 import { FaAngleUp } from 'react-icons/fa'
 import { Book } from 'types/data'
 
@@ -118,7 +117,7 @@ export function AboveLine({ name, isOpen, onClick }) {
 }
 
 export async function getStaticProps() {
-  const books = await fetchBooks()
+  const books = []
   return {
     props: {
       books,

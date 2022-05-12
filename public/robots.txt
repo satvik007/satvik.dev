@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ninjadeals.xyz
+Host: https://satvik.dev
 
 # Sitemaps
-Sitemap: https://ninjadeals.xyz/sitemap.xml
+Sitemap: https://satvik.dev/sitemap.xml

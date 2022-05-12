@@ -1,5 +1,5 @@
 import { Book } from 'types/data'
-import NextImage from '@/components/NextImage'
+import NextImage from 'components/NextImage'
 
 export default function BooksGrid({ books }: { books: Book[] }) {
   return (

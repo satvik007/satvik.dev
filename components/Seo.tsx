@@ -1,19 +1,18 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { openGraph } from '@/lib/helper'
+import { openGraph } from 'lib/helper'
 
 const defaultMeta = {
-  title: 'ninjadeals',
-  siteName: 'ninjadeals',
-  description:
-    'ninjadeals is a platform for price history, set price alerts and discover the best deals from popular online stores around the world. Discover best deals from Amazon, Flipkart, Myntra, Ajio and many more.',
+  title: 'Satvik Choudhary',
+  siteName: 'satvik.dev',
+  description: 'Personal website and blog of Satvik Choudhary',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://ninjadeals.xyz',
+  url: 'https://satvik.dev',
   type: 'website',
   robots: 'follow, index',
   /** No need to be filled, will be populated with openGraph function */
-  image: '',
+  image: 'https://satvik.dev/images/satvik_choudhary.jpg',
 }
 
 type SeoProps = {
@@ -52,7 +51,7 @@ export default function Seo(props: SeoProps) {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='' />
+      <meta name='twitter:site' content='@realsatvik007' />
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
@@ -69,7 +68,7 @@ export default function Seo(props: SeoProps) {
         <link key={linkProps.href} {...linkProps} />
       ))}
       <meta name='TileColor' content='#ffffff' />
-      <meta name='Ninja' content='/favicon/favicon.ico' />
+      <meta name='Satvik Choudhary' content='favicon.ico' />
       <meta name='theme-color' content='#ffffff' />
     </Head>
   )

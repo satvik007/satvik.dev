@@ -18,14 +18,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/layouts/*": ["layouts/*"],
-      "@/styles/*": ["styles/*"],
-      "@/lib/*": ["lib/*"],
-      "@/data/*": ["data/*"]
+      "contentlayer/*": [".contentlayer/generated/*"]
     },
     "types": ["node", "gtag.js", "jest", "webpack-env"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"],
   "exclude": ["node_modules"]
 }

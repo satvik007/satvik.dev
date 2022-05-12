@@ -14,6 +14,16 @@
     "next",
     "next/core-web-vitals"
   ],
+  "globals": {
+    "JSX": true,
+    "React": true,
+    "ReactDOM": true,
+    "DOM": true,
+    "dom": true,
+    "dom.iterable": true,
+    "esnext": true,
+    "es2017": true
+  },
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",

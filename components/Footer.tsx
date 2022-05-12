@@ -1,5 +1,5 @@
-import siteMetadata from '@/data/siteMetadata.json'
-import Icon from '@/components/icons'
+import siteMetadata from 'data/siteMetadata.json'
+import Icon from 'components/icons'
 import clsx from 'clsx'
 import Link from 'next/link'
 
@@ -28,7 +28,7 @@ const links2 = [
 export default function Footer({ className }: { className?: string }) {
   return (
     <footer className={clsx(className, 'bg-prism')}>
-      <div className='mt-4 flex flex-col items-center'>
+      <div className='flex flex-col items-center pt-4 pb-2'>
         <div className='grid grid-cols-4 items-center'>
           <div className='prose dark:prose-dark col-span-2 mb-5 flex space-x-4'>
             <Icon kind='github' size='40px' href={siteMetadata.github} />

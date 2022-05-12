@@ -1,7 +1,6 @@
-import Logo from '@/components/Logo'
+import Logo from 'components/Logo'
 import Link from 'next/link'
-import ThemeSwitch from '@/components/ThemeSwitch'
-import { ThemeProvider } from 'next-themes'
+import ThemeSwitch from 'components/ThemeSwitch'
 
 export default function Header() {
   return <header className='pt-2 lg:pt-2'>{/*<ThemeProvider/>*/}</header>

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  :root {
+    --color-background-container: #ffffff;
+    --headerMarginTop: 200px;
+  }
+
   .space-between {
     justify-content: space-between;
   }
@@ -28,79 +33,362 @@
   blockquote {
     quotes: '“' '”' '‘' '’';
   }
-}
+  .burger {
+    transition: opacity 300ms ease;
+    border: 0;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+  .burger svg {
+    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transition: opacity 300ms ease, transform 300ms ease;
+  }
 
-:root {
-  --color-background-container: #ffffff;
-  --headerMarginTop: 200px;
-}
+  .burger svg[data-hide='true'] {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
+  .menu {
+    padding: 0 28px 0 4px;
+    margin: 0;
+    padding-top: 24px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0;
+    left: 0;
+    transition: opacity 300ms ease, transform 300ms ease;
+  }
 
-#gradient-canvas {
-  width: 100%;
-  height: 100%;
-  min-height: 100px;
-  --gradient-color-1: #ef008fc0;
-  --gradient-color-2: #6ec3f4c0;
-  --gradient-color-3: #7038ffc0;
-  --gradient-color-4: #ffba27ff;
-  z-index: 1;
-}
+  .menu li {
+    transform: translateX(-16px);
+    opacity: 0;
+    transition: opacity 300ms ease, transform 300ms ease, width 300ms ease, border-color 300ms ease;
+    width: 0px;
+    white-space: nowrap;
+  }
 
-.canvas-container {
-  background-image: url('/images/bg-gradient.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-}
+  .menuRendered {
+    opacity: 1;
+  }
 
-.profile-image {
-  border-radius: 50%;
-  /*border: 20px solid var(--color-background-container);*/
-  z-index: 10;
-}
+  .menuRendered li {
+    @apply w-full border-gray-200 dark:border-gray-600;
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-.profile-image-container {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid var(--color-background-container);
-  border-radius: 50%;
-  z-index: 9;
-}
+  .menu > * + * {
+    margin-top: 24px;
+  }
 
-.logo-rainbow-box {
-  position: relative;
-  background-color: black;
-  border: 5px solid transparent;
-  border-image: linear-gradient(
-    to bottom right,
-    #b827fc 0%,
-    #2c90fc 25%,
-    #b8fd33 50%,
-    #fec837 75%,
-    #fd1892 100%
-  );
-  border-image-slice: 1;
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-}
+  @keyframes grow {
+    0% {
+      height: 0px;
+    }
+    100% {
+      height: 24px;
+    }
+  }
 
-.logo-text {
-  color: white;
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url(/fonts/ibm-plex-sans-var.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url(/fonts/ibm-plex-sans-var-italic.woff2) format('woff2');
+  }
+
+  ::selection {
+    background-color: #47a3f3;
+    color: #fefefe;
+  }
+
+  html {
+    min-width: 360px;
+    scroll-behavior: smooth;
+  }
+
+  #__next {
+    @apply bg-gray-50 dark:bg-gray-900;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* https://seek-oss.github.io/capsize/ */
+  .capsize::before {
+    content: '';
+    margin-bottom: -0.098em;
+    display: table;
+  }
+
+  .capsize::after {
+    content: '';
+    margin-top: -0.219em;
+    display: table;
+  }
+
+  .skip-nav {
+    @apply absolute -left-1/4 -top-8 -translate-y-12 transform px-4 py-3 transition-transform duration-200 focus:top-4 focus:translate-y-3;
+  }
+
+  #skip {
+    scroll-margin-top: 1.125rem;
+  }
+
+  @supports not (backdrop-filter: none) {
+    .sticky-nav {
+      backdrop-filter: none;
+      @apply bg-opacity-100;
+    }
+  }
+
+  /*.prose .anchor {*/
+  /*  @apply invisible absolute;*/
+
+  /*  margin-left: -1em;*/
+  /*  padding-right: 0.5em;*/
+  /*  width: 80%;*/
+  /*  max-width: 700px;*/
+  /*  cursor: pointer;*/
+  /*}*/
+
+  .anchor:hover {
+    @apply visible no-underline;
+  }
+
+  .prose a {
+    @apply transition-all;
+  }
+
+  .prose .anchor:after {
+    @apply text-gray-300 dark:text-gray-700;
+    content: '#';
+  }
+
+  .prose *:hover > .anchor {
+    @apply visible no-underline;
+  }
+
+  .prose pre {
+    @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+  }
+
+  .prose code {
+    @apply rounded-lg border border-gray-100 bg-gray-100 px-1 py-0.5 text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200;
+  }
+
+  .prose pre code {
+    @apply p-0 text-gray-800 dark:text-gray-200;
+    border: initial;
+  }
+
+  .prose img {
+    /* Don't apply styles to next/image */
+    @apply m-0;
+  }
+
+  /*.prose > :first-child {*/
+  /*  !* Override removing top margin, causing layout shift *!*/
+  /*  margin-top: 1.25em !important;*/
+  /*  margin-bottom: 1.25em !important;*/
+  /*}*/
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .token.punctuation {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    @apply text-green-500;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    @apply text-purple-500;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    @apply text-yellow-500;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    @apply text-blue-500;
+  }
+
+  .token.function,
+  .token.class-name {
+    @apply text-pink-500;
+  }
+
+  .token.regex,
+  .token.important,
+  .token.variable {
+    @apply text-yellow-500;
+  }
+
+  code[class*='language-'],
+  pre[class*='language-'] {
+    @apply text-gray-800 dark:text-gray-50;
+  }
+
+  pre::-webkit-scrollbar {
+    display: none;
+  }
+
+  pre {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .rehype-code-title {
+    @apply rounded-t-lg border border-b-0 border-gray-200 bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200;
+  }
+
+  .rehype-code-title + pre {
+    @apply mt-0 rounded-t-none;
+  }
+
+  .highlight-line {
+    @apply -mx-4 block border-l-4 border-blue-500 bg-gray-100 px-4 dark:bg-gray-800;
+  }
+
+  /* Remove Safari input shadow on mobile */
+  input[type='text'],
+  input[type='email'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .metric-card > a {
+    @apply no-underline;
+  }
+
+  .metric-card > p {
+    @apply my-2;
+  }
+
+  .step > h3 {
+    @apply my-0;
+  }
+
+  .prose .tweet a {
+    text-decoration: inherit;
+    font-weight: inherit;
+  }
+
+  table {
+    display: block;
+    max-width: fit-content;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #gradient-canvas {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    --gradient-color-1: #ef008fc0;
+    --gradient-color-2: #6ec3f4c0;
+    --gradient-color-3: #7038ffc0;
+    --gradient-color-4: #ffba27ff;
+    z-index: 1;
+  }
+
+  .canvas-container {
+    background-image: url('/images/bg-gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile-image {
+    border-radius: 50%;
+    /*border: 20px solid var(--color-background-container);*/
+    z-index: 10;
+  }
+
+  .profile-image-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid var(--color-background-container);
+    border-radius: 50%;
+    z-index: 9;
+  }
+
+  .logo-rainbow-box {
+    position: relative;
+    background-color: black;
+    border: 5px solid transparent;
+    border-image: linear-gradient(
+      to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #b8fd33 50%,
+      #fec837 75%,
+      #fd1892 100%
+    );
+    border-image-slice: 1;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+
+  .logo-text {
+    color: white;
+  }
 }
