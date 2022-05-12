@@ -18,7 +18,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <MainLayout>
       <div className='bg-prism flex flex-1 flex-col items-center justify-center'>
-        <div className='mx-auto mb-16 flex max-w-xl flex-col items-start justify-center bg-white px-16 py-16 py-2 lg:max-w-3xl lg:rounded-3xl lg:border-2 lg:border-amber-500'>
+        <div className='mx-auto mb-16 flex max-w-xl flex-col items-start justify-center bg-white px-16 py-16 lg:max-w-3xl lg:rounded-3xl lg:border-2 lg:border-amber-500'>
           <h1 className='mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl'>
             Blog
           </h1>
