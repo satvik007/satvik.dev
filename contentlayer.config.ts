@@ -23,7 +23,11 @@ const computedFields: ComputedFields = {
   },
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    resolve: (doc) =>
+      doc._raw.sourceFilePath
+        .replace(/\/index\.mdx$/, '')
+        .split('/')
+        .pop(),
   },
 }
 
@@ -31,44 +35,21 @@ const Blog = defineDocumentType(() => ({
   name: 'Blog',
   filePathPattern: 'blog/**/*.mdx',
   bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
+    publishedAt: { type: 'date', required: true },
     summary: { type: 'string', required: true },
     image: { type: 'string', required: true },
   },
   computedFields,
 }))
 
-// const Newsletter = defineDocumentType(() => ({
-//   name: 'Newsletter',
-//   filePathPattern: 'newsletter/*.mdx',
-//   bodyType: 'mdx',
-//   fields: {
-//     title: { type: 'string', required: true },
-//     publishedAt: { type: 'string', required: true },
-//     summary: { type: 'string', required: true },
-//     image: { type: 'string', required: true },
-//   },
-//   computedFields,
-// }))
-
-// const Snippet = defineDocumentType(() => ({
-//   name: 'Snippet',
-//   filePathPattern: 'snippets/*.mdx',
-//   bodyType: 'mdx',
-//   fields: {
-//     title: { type: 'string', required: true },
-//     description: { type: 'string', required: true },
-//     logo: { type: 'string', required: true },
-//   },
-//   computedFields,
-// }))
-
 const OtherPage = defineDocumentType(() => ({
   name: 'OtherPage',
   filePathPattern: '*.mdx',
   bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
   },
@@ -79,9 +60,10 @@ const Books = defineDocumentType(() => ({
   name: 'Books',
   filePathPattern: 'books/**/*.mdx',
   bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
+    publishedAt: { type: 'date', required: true },
     summary: { type: 'string', required: true },
     image: { type: 'string', required: true },
   },

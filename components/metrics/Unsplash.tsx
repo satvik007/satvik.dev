@@ -9,7 +9,7 @@ export default function UnsplashCard() {
 
   const downloads = new Number(data?.downloads)
   const views = new Number(data?.views)
-  const link = 'https://unsplash.com/@leerob'
+  const link = 'https://unsplash.com/@satvik007'
 
   return (
     <div className='my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>

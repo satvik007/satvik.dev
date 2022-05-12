@@ -18,7 +18,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "contentlayer/*": [".contentlayer/generated/*"]
     },
     "types": ["node", "gtag.js", "jest", "webpack-env"]
   },
