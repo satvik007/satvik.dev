@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,7 +20,7 @@
     "paths": {
       "contentlayer/*": [".contentlayer/generated/*"]
     },
-    "types": ["node", "gtag.js", "jest", "webpack-env"]
+    "types": ["node", "gtag.js", "jest", "webpack-env", ".contentlayer/generated"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"],
   "exclude": ["node_modules"]
