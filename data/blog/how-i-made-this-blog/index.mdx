@@ -1,0 +1,56 @@
+---
+title: How I made this Blog
+publishedAt: 2022-05-13T19:00:00.000Z
+summary: How I made this Blog
+image: /images/blog/how-i-made-this-blog/blog.webp
+---
+
+Recently I have been quite interested in the frontend space. The inspiration has certainly come from dev twitter.
+After exploring different frontend projects as well as tooling, I decided to work on my own site and a blog.
+I got my domain from [Google domains](https://domains.google.com/registrar/).
+
+
+For the frontend framework, I am using [Next.js](https://nextjs.org/) which is a full stack React framework.
+Next.js provides a lot of features and is a great choice for a blog.
+With a very little learning curve, I get pretty much the best developer experience and performance.
+Try clicking on any links in this website, everything will feel very snappy.
+This happens because Next.js has prefetched all the pages you are going to visit.
+It also reduces bundle sizes by doing automatic [code splitting](https://developer.mozilla.org/en-US/docs/Glossary/Code_splitting) as well as many other features.
+
+
+For styling, I am using [TailwindCSS](https://tailwindcss.com/).
+It was quite challenging at first - I had to open the docs quite regularly but with regular use
+I developed muscle memory for the commonly used properties and it made me more productive.
+Now I don't have to think about what to name my classes, worry about collisions. It also makes the CSS more maintainable.
+The typography plugin is also very helpful.
+
+For hosting, I am using [Vercel](https://vercel.com/). Vercel is a free hosting platform for individual use.
+It is faster than the alternatives, edge functions make sure that you don't need to create a separate backend for
+connecting to a DB. It connects directly with Github, updates the builds automatically for every git push
+including preview builds for non-main branches, security certificates and more.
+
+
+For my DB needs, I am using [Prisma](https://www.prisma.io/). Prisma is an ORM for TypeScript.
+For hosting the DB I am using [PlanetScale](https://planetscale.com/) which has very generous free tier.
+
+
+To write the actual content, I am using [MDX](https://mdxjs.com/).
+I felt that writing the content in HTML would make me too slow, and Markdown wasn't flexible enough.
+MDX allows you to use React components within my markdown files.
+Rendering MDX was a bit challenging, even though there are some fantastic open source packages.
+I was trying to initially do it via babel loaders, but later on found out a solution using [contentlayer](https://www.contentlayer.dev/)
+which made the process much easier.
+
+
+I am also using [Splitbee](https://splitbee.io/) for analytics. It provides free analytics like how many readers are visiting my blog, whom are they being referred by, what countries they belong to, etc.
+
+
+<Image
+  alt={`Splitbee analytics, it shows 2 bar graphs on the top. 1st one with unique users on th y-axis and time on x-axis. Next one with page views on the y-axis and time on x-axis. Then there are also statistics for different things like referrers, country wise, etc.`}
+  src={`/images/blog/how-i-made-this-blog/splitbee.png`}
+  width={2470/4}
+  height={1800/4}
+/>
+
+
+Also much thanks to [Lee](https://leerob.io/). A lot of stuff in this blog is inspired from or directly copied 😁 from Lee's blog.
